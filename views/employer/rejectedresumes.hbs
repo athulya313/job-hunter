@@ -1,0 +1,40 @@
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-left m-4">
+							<h4>All Resume Requests :</h2>
+						</div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        {{#each rejdetails}}
+                        
+                        <div class="single-job-items mb-30 bg-light shadow-sm rounded">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href=" "><img src="../../ResumeImages/{{this._id}}.jpg" alt="company-logo" style="width: 100px;height: 100px;"></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a href=""><h4>{{this.fName}} {{this.lName}}</h4></a>
+                                    <ul>
+                                        <li><i class="fas fa-envelope"></i>{{this.email}}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{this.location}}</li>
+                                    </ul>
+                                    <ul class="mt-1">
+                                        <li><i class="fas fa-globe"></i><a target="_blank" class="text-primary" href="{{this.webLink}}">Website/Portfolio</a></li>
+                                    </ul>
+									<ul class="mt-3">
+                                        <li><i class="fas fa-file"></i><a target="_blank" class="text-primary" href="../../Resume/{{this._id}}.pdf">View Resume</a></li>
+                                       <span class="">Applied For : <b>{{this.jobTitle}}</b></span>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="items-link f-right">
+                                <span>Applied on : {{this.createdAt}}</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+		</div>
+	</div>

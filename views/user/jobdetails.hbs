@@ -1,0 +1,104 @@
+
+<div class="slider-area">
+<div
+    class="single-slider section-overly slider-height2 d-flex align-items-center"
+    data-background="assets/img/hero/main.jpg"
+  >
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="hero-cap text-center">
+            <h2>{{details.jobtitle}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="job-post-company pt-120 pb-120">
+  <div class="container">
+    <div class="row justify-content-between">
+      
+      <div class="col-xl-7 col-lg-8">
+       
+        <div class="single-job-items mb-50">
+          <div class="job-items">
+            <div class="company-img company-img-details">
+              <a href="#"><img
+                  src="../../jobImage/{{details._id}}.jpg"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                /></a>
+            </div>
+            <div class="job-tittle">
+              <a href="/jobdetails/{{details._id}}"><h4
+                >{{details.jobtitle}}</h4></a>
+              <ul>
+                <li><i class="fas fa-globe"></i>{{details.compname}}</li>
+                <li><i
+                    class="fas fa-map-marker-alt"
+                  ></i>{{details.companylocation}}</li>
+              </ul>
+              <ul class="mt-1">
+                <li><i class="fas fa-language"></i>{{details.language}}</li>
+                <li><i class="fas fa-clock"></i>{{details.timeSchedule}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+        <div class="job-post-details">
+          <div class="post-details1 mb-50">
+            
+            <div class="small-section-tittle">
+              <h4>Job Description</h4>
+            </div>
+            <p>{{details.description}}</p>
+          </div>
+          <div class="post-details2 mb-50">
+            <div class="small-section-tittle">
+              <h4>Required Skills</h4>
+            </div>
+            <ul>
+              <li>{{details.skills}}</li>
+            </ul>
+          </div>
+          <div class="post-details2 mb-50">
+
+            <div class="small-section-tittle">
+              <h4>Qualification</h4>
+            </div>
+            <ul>
+              <li>{{details.qualifications}}</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="col-xl-4 col-lg-4">
+        <div class="post-details3 mb-50">
+         
+          <div class="small-section-tittle">
+            <h4>Job Overview</h4>
+          </div>
+          <ul>
+            <li>Posted on : <span>{{details.createdAt}}</span></li>
+            <li>Location : <span>{{details.companylocation}}</span></li>
+            <li>Experience : <span>{{details.experience}}</span></li>
+            <li>Job Type : <span>{{details.timeSchedule}}</span></li>
+            <li>Languages : <span>{{details.language}}</span></li>
+            <li>pin : <span>{{details.pin}}</span></li>
+          </ul>
+          <div class="apply-btn2">
+            <a href="/applyjob/{{details._id}}" class="btn">Apply Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

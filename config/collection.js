@@ -1,0 +1,11 @@
+module.exports={
+    USER_COLLECTIONS:'user',
+    EMPLOYER_COLLECTIONS:'employer',
+    JOBS_COLLECTIONS:'job',
+    JOB_REQUESTS:'jobrequest',
+    APPROVED_RESUMES:'approvedresumes',
+    REJECTED_RESUMES:'rejectedresumes',
+    ADMIN_COLLECTION:'admin',
+    BANNED_EMPLOYER:'bannedemployer',
+    BANNED_USERS:'banneduser'
+}

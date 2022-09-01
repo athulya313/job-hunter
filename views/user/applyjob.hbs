@@ -1,0 +1,181 @@
+<div class="slider-area">
+  <div
+    class="single-slider section-overly slider-height2 d-flex align-items-center"
+    data-background="assets/img/hero/about.jpg"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="hero-cap text-center">
+            <h2>Apply for {{details.jobtitle}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="job-post-company pt-120 pb-120">
+  <div class="container">
+    <form action="/applyjob" method="POST" enctype="multipart/form-data">
+      <div class="row justify-content-between">
+       
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <h3 class="mb-30">Application Form</h3>
+
+          <div class="mt-4">
+            <input
+              type="text"
+              name="fName"
+              placeholder="First Name"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              name="lName"
+              placeholder="Last Name"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              name="jobTitle"
+              placeholder="job title"
+              value="{{details.jobtitle}}"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="url"
+              name="webLink"
+              placeholder="Website/Portfolio Link"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              name="location"
+              placeholder="Location"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              name="skills"
+              placeholder="Skills"
+              required
+              class="single-input"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              name="employerid"
+              required
+              class="single-input"
+              value="{{details.employerid}}"
+              hidden
+            />
+            <input
+              type="text"
+              name="userId"
+              required
+              class="single-input"
+              value="{{userid}}"
+              hidden
+            />
+            <input
+              type="text"
+              name="jobId"
+              required
+              class="single-input"
+              value="{{details._id}}"
+              hidden
+            />
+            <input
+              type="text"
+              name="status"
+              required
+              class="single-input"
+              value="Applied"
+              hidden
+            />
+          </div>
+
+         
+
+          <div class="job-post-details mt-4">
+            <label for="">Resume :</label><br />
+            <input
+              type="file"
+              accept="appplication/pdf"
+              placeholder="Upload your Resume"
+              name="Resume"
+            />
+          </div>
+
+        </div>
+
+        <div class="r-content col-xl-4 col-lg-4">
+          <span>Your Photo : </span>
+
+          <div class="r-content file-field">
+            <div class="mb-4 img-fluid">
+              <img
+                src=""
+                id="imgView"
+                class="rounded-circle z-depth-1-half avatar-pic mt-3"
+                alt="example placeholder avatar"
+                width="200"
+                height="200"
+              />
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="float-left">
+                <input
+                  type="file"
+                  onchange="viewImage(event)"
+                  name="Image"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="s-btn">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .r-content { display: flex; flex-direction: column; align-items: center;
+  justify-content: center; } .s-btn{ display: flex; align-items: center;
+  justify-content: center; margin-top: 4rem; } .single-input{ padding: 0; }
+</style>
+<script>
+  function viewImage(event) { document.getElementById('imgView').src =
+  URL.createObjectURL(event.target.files[0]) }
+</script>

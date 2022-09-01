@@ -1,0 +1,185 @@
+<div class="slider-area">
+  <div
+    class="single-slider section-overly slider-height2 d-flex align-items-center"
+    data-background="assets/img/hero/main.jpg"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="hero-cap text-center">
+            <h2>Your Jobs Status</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="job-listing-area pt-120 pb-120">
+  <div class="container">
+    <div class="row">
+     
+      <div class="col-xl-12 col-lg-12 col-md-12">
+        
+        <section class="featured-job-area">
+          <div class="container">
+
+           
+            <div class="row mt-4 mb-4">
+              <div class="col-lg-12">
+                <div class="count-job mb-35">
+                  <span><b>Applied Jobs :</b></span>
+
+                  <div class="select-job-items">
+                    
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            {{#if appliedjobs}}
+                {{#each appliedjobs}}
+              <div class="single-job-items mb-30 ">
+                <div class="job-items">
+                  <div class="company-img">
+                    <a href="/jobdetails?id={{this._id}}"><img
+                        src="../../ResumeImages/{{this._id}}.jpg"
+                        alt="company-logo"
+                        style="width: 100px;height: 100px;"
+                      /></a>
+                  </div>
+                  <div class="job-tittle">
+                    <h4 >{{this.appliedjobs.jobtitle}}</h4></a>
+                    <ul>
+                      <li><i class="fas fa-globe"></i>{{this.appliedjobs.compname}}</li>
+                      <li><i
+                          class="fas fa-map-marker-alt"
+                        ></i>{{this.appliedjobs.companylocation}}</li>
+                    </ul>
+                    <ul class="mt-1">
+                      <li><i class="fas fa-language"></i>{{this.appliedjobs.language}}</li>
+                      <li><i class="fas fa-clock"></i>{{this.appliedjobs.timeSchedule}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="items-link f-right">
+
+                  <span>Created On: {{this.appliedjobs.createdAt}}</span>
+                </div>
+              </div>
+            {{/each}}
+
+            {{else}}
+            <div class="text-center pb-4 mb-4">
+              <h6> Found No Jobs Currently...</h4>
+            </div>
+            {{/if}}
+        
+            <div class="row mt-4">
+              <div class="col-lg-12">
+                <div class="count-job mb-35">
+                  <span><b>Approved Jobs</b></span>
+                 
+                  <div class="select-job-items">
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          
+              {{#if approvedResumes}}
+                {{#each approvedResumes}}
+              <div class="single-job-items mb-30">
+                <div class="job-items">
+                  <div class="company-img">
+                    <a href="/jobdetails?id={{this._id}}"><img
+                        src="../../ResumeImages/{{this._id}}.jpg"
+                        alt="company-logo"
+                        style="width: 100px;height: 100px;"
+                      /></a>
+                  </div>
+                  <div class="job-tittle">
+                <h4>{{this.appliedjobs.jobtitle}}</h4></a>
+                    <ul>
+                      <li><i class="fas fa-globe"></i>{{this.appliedjobs.compname}}</li>
+                      <li><i
+                          class="fas fa-map-marker-alt"
+                        ></i>{{this.appliedjobs.companylocation}}</li>
+                    </ul>
+                    <ul class="mt-1">
+                      <li><i class="fas fa-language"></i>{{this.appliedjobs.language}}</li>
+                      <li><i class="fas fa-clock"></i>{{this.appliedjobs.timeSchedule}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="items-link f-right">
+                  <span>Created On: {{this.appliedjobs.createdAt}}</span>
+                </div>
+              </div>
+            {{/each}}
+            {{else}}
+            <div class="text-center pb-4 mb-4">
+              <h6>Found No Approved Jobs Currently...</h4>
+            </div>
+            {{/if}}
+            
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="count-job mb-35">
+                  <span><b>Rejected Jobs</b></span>
+                  
+                  <div class="select-job-items">
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          {{#if rejectedjobs}}
+                {{#each rejectedjobs}}
+                
+              <div class="single-job-items mb-30">
+                <div class="job-items">
+                  <div class="company-img">
+                    <a href="/jobdetails?id={{this._id}}"><img
+                        src="../../ResumeImages/{{this._id}}.jpg"
+                        alt="company-logo"
+                        style="width: 100px;height: 100px;"
+                      /></a>
+                  </div>
+                  <div class="job-tittle">
+                  <h4>{{this.rejectedjobs.jobtitle}}</h4></a>
+                    <ul>
+                      <li><i class="fas fa-globe"></i>{{this.rejectedjobs.compname}}</li>
+                      <li><i
+                          class="fas fa-map-marker-alt"
+                        ></i>{{this.rejectedjobs.companylocation}}</li>
+                    </ul>
+                    <ul class="mt-1">
+                      <li><i class="fas fa-language"></i>{{this.rejectedjobs.language}}</li>
+                      <li><i class="fas fa-clock"></i>{{this.rejectedjobs.timeSchedule}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="items-link f-right">
+
+                  <span>Created On: {{this.rejectedjobs.createdAt}}</span>
+                </div>
+              </div>
+            {{/each}}
+            {{else}}
+            <div class="text-center pb-4 mb-4">
+              <h6>Found No Rejected Jobs Currently...</h4>
+            </div>
+            {{/if}}
+           
+          </div>
+        </section>
+        
+      </div>
+    </div>
+  </div>
+</div>

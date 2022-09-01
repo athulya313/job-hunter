@@ -1,0 +1,43 @@
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3"><strong>Employers</strong> List</h1>
+
+				<div class="row">
+						<div class="col-12 col-lg-12 col-xxl-12 d-flex">
+							<div class="card flex-fill">
+								<table class="table table-hover my-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th class="d-none d-xl-table-cell">Email</th>
+											<th class="d-none d-xl-table-cell">Createdat</th>
+											<th>Jobs</th>
+											<th class="d-none d-md-table-cell">Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										{{#each employers}}
+										<tr>
+											<td class="text-success"><b>{{this.name}}</b></td>
+											<td class="d-none d-xl-table-cell">{{this.email}}</td>
+											<td class="d-none d-xl-table-cell">{{this.createdAt}}</td>
+											<td><a href="/admin/viewjobs?id={{this._id}}" class="text-primary">View jobs</a></td>
+											<td class="d-none d-md-table-cell">
+									<a href="/admin/banemployers?id={{this._id}}" class="p-2 bg-warning m-1" data-toggle="tooltip" data-placement="top" title="Ban Employer">BAN EMPLOYER<i class="align-middle" data-feather="eye-off" onclick="return confirm('are you sure to Ban {{this.name}}?')"></i></a>
+									<a href="/admin/deleteemployer?id={{this._id}}" class="p-2 bg-danger m-1"  data-toggle="tooltip" data-placement="top" title="Delete Employer">DELETE EMPLOYER<i class="align-middle" data-feather="delete" onclick="return confirm('are you sure to Delete {{this.name}}?')"></i></a>
+											</td>
+										</tr>
+										{{/each}}
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					
+
+
+				</div>
+			</main>
+
+			
